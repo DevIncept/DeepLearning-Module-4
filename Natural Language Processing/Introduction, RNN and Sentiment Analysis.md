@@ -53,7 +53,7 @@ Continuous Skip-Gram Model.\
 The CBOW model learns the embedding by predicting the current word based on its context. The continuous skip-gram model learns by predicting the surrounding words given a current word.\
 The continuous skip-gram model learns by predicting the surrounding words given a current word.*
 
-![e1.webp](attachment:e1.webp)
+![e1.webp](images/e1.webp)
 
 **GloVe**\
 *The Global Vectors for Word Representation, or GloVe, algorithm is an extension to the word2vec method for efficiently learning word vectors, developed by Pennington, et al. at Stanford.\
@@ -88,16 +88,16 @@ The result of the padding sequences is pretty straight forward. You can now obse
 
 
 
-![r1.jpg](attachment:r1.jpg)
+![r1.jpg](images/r1.jpg)
 
 * RNN converts the independent activations into dependent activations by providing the same weights and biases to all the layers, thus reducing the complexity of increasing parameters and memorizing each previous outputs by giving each output as input to the next hidden layer.
 * *Hence these three layers can be joined together such that the weights and bias of all the hidden layers is the same, into a single recurrent layer.*
 
-![r2.jpg](attachment:r2.jpg)
+![r2.jpg](images/r2.jpg)
 
 * Formula for calculating current state:
 
-![r3.png](attachment:r3.png)
+![r3.png](images/r3.png)
 
 *ht -> current state\
 ht-1 -> previous state\
@@ -105,14 +105,14 @@ xt -> input state*
 
 * Formula for applying Activation function(tanh):
 
-![r4.png](attachment:r4.png)
+![r4.png](images/r4.png)
 
 *whh -> weight at recurrent neuron\
 wxh -> weight at input neuron*
 
 * Formula for calculating output:
 
-![r5.png](attachment:r5.png)
+![r5.png](images/r5.png)
 
 *Yt -> output\
 Why -> weight at output layer*
@@ -121,27 +121,27 @@ Why -> weight at output layer*
 
 ### Coding RNN using Python
 
-![c1.PNG](attachment:c1.PNG)
+![c1.PNG](images/c1.PNG)
 
-![c2.PNG](attachment:c2.PNG)
+![c2.PNG](images/c2.PNG)
 
-![c3.PNG](attachment:c3.PNG)
+![c3.PNG](images/c3.PNG)
 
-![c4.PNG](attachment:c4.PNG)
+![c4.PNG](images/c4.PNG)
 
-![c5.PNG](attachment:c5.PNG)
+![c5.PNG](images/c5.PNG)
 
-![c6.PNG](attachment:c6.PNG)
+![c6.PNG](images/c6.PNG)
 
-![c7.PNG](attachment:c7.PNG)
+![c7.PNG](images/c7.PNG)
 
-![c8.PNG](attachment:c8.PNG)
+![c8.PNG](images/c8.PNG)
 
-![c9.PNG](attachment:c9.PNG)
+![c9.PNG](images/c9.PNG)
 
-![c10.PNG](attachment:c10.PNG)
+![c10.PNG](images/c10.PNG)
 
-![c11.PNG](attachment:c11.PNG)
+![c11.PNG](images/c11.PNG)
 
 ![c12.PNG](attachment:c12.PNG)
 
@@ -312,7 +312,7 @@ if __name__ == "__main__": \
 	main()
 
 
-![s1.PNG](attachment:s1.PNG)
+![s1.PNG](images/s1.PNG)
 
 ## Introduction to Bert
 
@@ -328,7 +328,7 @@ if __name__ == "__main__": \
 * Segment embeddings: A marker indicating Sentence A or Sentence B is added to each token. This allows the encoder to distinguish between sentences.
 * Positional embeddings: A positional embedding is added to each token to indicate its position in the sentence
 
-![b1.png](attachment:b1.png)
+![b1.png](images/b1.png)
 
 
 ```python
