@@ -163,7 +163,7 @@ integers = vectorizer.transform(text)\
 x = mnb.predict(integers)[0]\
 find(x) 
 
-![two1.png](attachment:two1.png)
+![two1.png](images/two1.png)
 
 ### Final Thoughts
 We used various machine learning algorithms to classify the text message and compared accuracy set across these models. Naive Bayes classifier gives the best result among all with an accuracy of over 98%.
@@ -180,7 +180,7 @@ Review 3: This movie is spooky and good\
 We will first build a vocabulary from all the unique words in the above three reviews. The vocabulary consists of these 11 words: ‘This’, ‘movie’, ‘is’, ‘very’, ‘scary’, ‘and’, ‘long’, ‘not’,  ‘slow’, ‘spooky’,  ‘good’.\
 We can now take each of these words and mark their occurrence in the three movie reviews above with 1s and 0s. This will give us 3 vectors for 3 reviews
 
-![v1.webp](attachment:v1.webp)
+![v1.webp](images/v1.webp)
 
 Vector of Review 1: [1 1 1 1 1 1 1 0 0 0 0]
 
@@ -193,7 +193,7 @@ And that’s the core idea behind a Bag of Words (BoW) model.
 **Term Frequency (TF)**
 * Let’s first understand Term Frequent (TF). It is a measure of how frequently a term, t, appears in a document, d:
 
-![v2.jpg](attachment:v2.jpg)
+![v2.jpg](images/v2.jpg)
 
 Here,
 
@@ -216,12 +216,12 @@ TF(‘slow’) = 1/8\
 TF( ‘spooky’) = 0/8 = 0\
 TF(‘good’) = 0/8 = 0
 
-![v3.webp](attachment:v3.webp)
+![v3.webp](images/v3.webp)
 
 **Inverse Document Frequency (IDF)**
 * IDF is a measure of how important a term is. We need the IDF value because computing just the TF alone is not sufficient to understand the importance of words:
 
-![v4.jpg](attachment:v4.jpg)
+![v4.jpg](images/v4.jpg)
 
 We can calculate the IDF values for the all the words in Review 2:\
 
@@ -239,7 +239,7 @@ We can calculate the IDF values for each word like this. Thus, the IDF values fo
 
 
 
-![v5.webp](attachment:v5.webp)
+![v5.webp](images/v5.webp)
 
 Hence, we see that words like “is”, “this”, “and”, etc., are reduced to 0 and have little importance; while words like “scary”, “long”, “good”, etc. are words with more importance and thus have a higher value.
 
@@ -247,7 +247,7 @@ We can now compute the TF-IDF score for each word in the corpus. Words with a hi
 
 
 
-![v6.jpg](attachment:v6.jpg)
+![v6.jpg](images/v6.jpg)
 
 We can now calculate the TF-IDF score for every word in Review 2:
 
@@ -263,7 +263,7 @@ TF-IDF(‘and’, Review 2) = 1/8 * 0 = 0\
 TF-IDF(‘slow’, Review 2) = 1/8 * 0.48 = 0.06\
 Similarly, we can calculate the TF-IDF scores for all the words with respect to all the reviews:
 
-![v7.webp](attachment:v7.webp)
+![v7.webp](images/v7.webp)
 
 import nltk  
 import numpy as np  
