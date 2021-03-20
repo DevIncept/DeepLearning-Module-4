@@ -143,9 +143,9 @@ Why -> weight at output layer*
 
 ![c11.PNG](images/c11.PNG)
 
-![c12.PNG](attachment:c12.PNG)
+![c12.PNG](images/c12.PNG)
 
-![c13.PNG](attachment:c13.PNG)
+![c13.PNG](images/c13.PNG)
 
 ## Sentiment analysis explanation and code
 
