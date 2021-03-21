@@ -51,17 +51,17 @@ According to this, top n best products are recommended and value of ‘n’ is d
 A prefixed threshold is fixed and all the items having value greater than threshold are suggested as given in below Equation .
 
 
-![1.bmp](attachment:1.bmp)
+![1.bmp](images/1.bmp)
 
 # Euclidean Distance: 
 It is computed using the formula given in below Equation
- ![2.bmp](attachment:2.bmp)
+ ![2.bmp](images/2.bmp)
 
 # Types of Recommender systems
 
 Different types of recommendation system are available that differ in terms of problem domain, Information used, and importantly recommendation algorithm used to make prediction. There are mainly two types of recommendation systems as shown in Figure below i.e. content-based RS and Collaborative filtering methods.
 
-![3.bmp](attachment:3.bmp)
+![3.bmp](images/3.bmp)
 
 ## 1. CONTENT-BASED
 
@@ -78,7 +78,7 @@ If our classification (or regression) is based on users features, we say the app
 
 If we are working with items features, the method is then user-centred: modelling, optimisations and computations can be done “by user”. We then train one model by user based on items features that tries to answer the question “what is the probability for this user to like each item?” (or “what is the rate given by this user to each item?”, for regression). We can then attach a model to each user that is trained on its data: the model obtained is, so, more personalised than its item-centred counterpart as it only takes into account interactions from the considered user. However, most of the time a user has interacted with relatively few items and, so, the model we obtain is a far less robust than an item-centred one.
 
-![9.bmp](attachment:9.bmp)
+![9.bmp](images/9.bmp)
 
 From a practical point of view, we should underline that, most of the time, it is much more difficult to ask some information to a new user (users do not want to answer too much questions) than to ask lot of information about a new item (people adding them have an interest in filling these information in order to make their items recommended to the right users). We can also notice that, depending on the complexity of the relation to express, the model we build can be more or less complex, ranging from basic models (logistic/linear regression for classification/regression) to deep neural networks. Finally, let’s mention that content based methods can also be neither user nor item centred: both informations about user and item can be used for our models, for example by stacking the two features vectors and making them go through a neural network architecture.
 
@@ -86,23 +86,23 @@ From a practical point of view, we should underline that, most of the time, it i
 
 Let’s first consider the case of an item-centred classification: for each item we want to train a Bayesian classifier that takes user features as inputs and output either “like” or “dislike”. So, to achieve the classification task, we want to compute
 
-![10.bmp](attachment:10.bmp)
+![10.bmp](images/10.bmp)
 
 are likelihoods assumed to follow Gaussian distributions with parameters to be determined also from data. Various hypothesis can be done about the covariance matrices of these two likelihood distributions (no assumption, equality of matrices, equality of matrices and features independence) leading to various well known models (quadratic discriminant analysis, linear discriminant analysis, naive Bayes classifier). We can underline once more that, here, likelihood parameters have to be estimated only based on data (interactions) related to the considered item.
 
 
-![11.bmp](attachment:11.bmp)
+![11.bmp](images/11.bmp)
 
 ### User-centred linear regression
 
 Let’s now consider the case of a user-centred regression: for each user we want to train a simple linear regression that takes item features as inputs and output the rating for this item. We still denote M the user-item interaction matrix, we stack into a matrix X row vectors representing users coefficients to be learned and we stack into a matrix Y row vectors representing items features that are given. Then, for a given user i, we learn the coefficients in X_i by solving the following optimisation problem
 
-![12.bmp](attachment:12.bmp)
+![12.bmp](images/12.bmp)
 
 where one should keep in mind that i is fixed and, so, the first summation is only over (user, item) pairs that concern user i. We can observe that if we solve this problem for all the users at the same time, the optimisation problem is exactly the same as the one we solve in “alternated matrix factorisation” when we keep items fixed. This observation underlines the link we mentioned in the first section: model based collaborative filtering approaches (such as matrix factorisation) and content based methods both assume a latent model for user-item interactions but model based collaborative approaches have to learn latent representations for both users and items whereas content-based methods build a model upon human defined features for users and/or items.
 
 
-![13.bmp](attachment:13.bmp)
+![13.bmp](images/13.bmp)
 
 
 
@@ -120,13 +120,13 @@ There are 2 categories of collaborative filtering as shown in Figure
 ### 1. Memory-based (neighborhood) approach: 
 In this, utility matrix is learnt and suggestions are given by asking the given user with rest of the utility matrix. Let’s suppose we have ‘m’ movies and ‘u’ users. To find out how much user likes movie ‘k’ Equation 5 is used:
 
-![4.bmp](attachment:4.bmp)
+![4.bmp](images/4.bmp)
 
-![5.bmp](attachment:5.bmp)
+![5.bmp](images/5.bmp)
 
 The above formula will give the average ranking that customer ‘i’ has specified to all the items. Rating of product can be estimated as given in Equation:
 
-![6.bmp](attachment:6.bmp)
+![6.bmp](images/6.bmp)
 
 It is easy to compute, but if data becomes sparse, performance becomes poor. Now the similarity between users ‘a’ and ‘i’ can be calculated using the methods like cosine similarity, Pearson’s correlation, etc.
 
@@ -136,13 +136,13 @@ Memory-Based Collaborative Filtering is further divided into two categories i.e.
  
 In this method, for a new item ‘i’ for a particular user ‘u’ rankings of nearest neighbors of user ‘u’ are used to compute the ranking rui of the user ‘u’ but only those neighbors are considered who have already given a ranking for the item ‘i’. The rating rui can be estimated as shown in Equation 
 
-![7.bmp](attachment:7.bmp)
+![7.bmp](images/7.bmp)
 
 Above equation does not consider the different level of similarity can occur among neighbors.
 
 The prediction of item is calculated by computing the weighted sum of the user ratings of ‘user-neighbors’ given by other users to item ‘i’. The prediction is given by the formula in Equation 
 
-![8.bmp](attachment:8.bmp)
+![8.bmp](images/8.bmp)
 
 Where Pu,i is the prediction of an item, Rv,i is the rating given by a user ‘v’ to an itemÂ image and Su,v is the similarity between users
 
@@ -161,7 +161,7 @@ When a new item comes in the market or given to the system, user’ actions are 
 
 This model represents users and items using utility matrix i.e. utility matrix is decomposed into A and B matrix where A signifies user and B denotes the items. For matrix decomposition, different techniques like SVD, PCA are used. Rating of each item is computed and product with highest rating is recommended. This model is beneficial when available data is large in volume.As per my understanding, the algorithms in this approach can further be broken down into 3 sub-types.
  
-![15.bmp](attachment:15.bmp) 
+![15.bmp](images/15.bmp) 
  
  
 ###  Matrix Factorization (MF): 
@@ -169,7 +169,7 @@ This model represents users and items using utility matrix i.e. utility matrix i
 The idea behind such models is that attitudes or preferences of a user can be determined by a small number of hidden factors. We can call these factors as Embeddings.Matrix decomposition can be reformulated as an optimization problem with loss functions and constraints. Now the constraints are chosen based on property of our model. For e.g. for Non negative matrix decomposition, we want non negative elements in resultant matrices.
  
 
-![16.bmp](attachment:16.bmp)
+![16.bmp](images/16.bmp)
 
 Embeddings:
 
@@ -180,7 +180,7 @@ Non parametric approach (KNN): The idea is same as that of memory-based recommen
 Neural Nets/ Deep Learning: There is a ton of research material on collaborative filtering using matrix factorization or similarity matrix. But there is lack on online material to learn how to use deep learning models for collaborative filtering. This is something that I learnt in fast.ai deep learning part 1 v2.
 Below is the visualization to explain what is happening when we are using neural nets for this problem.
 
-![17.bmp](attachment:17.bmp)
+![17.bmp](images/17.bmp)
 
 We can think of this as an extension to matrix factorization method. For SVD or PCA, we decompose our original sparse matrix into product of 2 low rank orthogonal matrices. For neural net implementation, we don’t need them to be orthogonal, we want our model to learn the values of embedding matrix itself. The user latent features and movie latent features are looked up from the embedding matrices for specific movie-user combination. These are the input values for further linear and non-linear layers. We can pass this input to multiple relu, linear or sigmoid layers and learn the corresponding weights by any optimization algorithm (Adam, SGD, etc.).
 
@@ -202,13 +202,13 @@ As already mentioned a couple of times, hybrid recommenders are extremely powerf
 Netflix is a very good example of a hybrid recommender. Netflix employs content-based techniques when it shows you similar movies to a movie you're watching (the MORE LIKE THIS section), as shown in the following screenshot:
 
 
-![18.bmp](attachment:18.bmp)
+![18.bmp](images/18.bmp)
 
 Here, we can see that while watching Ratatouille, Netflix recommends movies to me that are very similar to Ratatouille. All the top five recommended movies are all animated and produced by Disney Pixar.
 
 However, animated movies are not the only genre I watch on Netflix. I also like watching drama and comedy. Netflix has a separate row of recommendations for me entitled Top Picks for Rounak, where it uses collaborative filtering to identify users similar to me and recommend movies that they have liked, but that I haven't watched:
 
-![19.bmp](attachment:19.bmp)
+![19.bmp](images/19.bmp)
 
 In this way, Netflix employs both content- and collaborative-based techniques separately to produce results that are extremely satisfactory.
 
@@ -307,11 +307,11 @@ Let's put our hybrid model to the test. Let's imagine that users with the IDs 1 
 
 - hybrid(1, 'Avatar')
 
-![20.bmp](attachment:20.bmp)
+![20.bmp](images/20.bmp)
 
 - hybrid(2, 'Avatar')
 
-![21.bmp](attachment:21.bmp)
+![21.bmp](images/21.bmp)
 
 We can see that although both users are currently watching Avatar, the recommendations differ in the content as well as the order. This is influenced by the collaborative filter. However, all the movies listed are similar to  Avatar. This is because of the content-based filtering carried out by the model.
 
@@ -326,7 +326,7 @@ Movielens Dataset:
 
 The data used in this example is the popular Movielens 20m dataset. This data contains user’s ratings of movies, as well as movie genre tag. (To increase training time, this data was downsampled to only include ratings from users who have rated over 1000 movies, and ratings of less than 3 stars were removed.)
 
-![22.bmp](attachment:22.bmp)
+![22.bmp](images/22.bmp)
 
 Models:
 
@@ -340,7 +340,7 @@ Long Tail Plot:
 
 I like to start off every recommender project by looking at the Long Tail Plot. This plot is used to explore popularity patterns in user-item interaction data such as clicks, ratings, or purchases. Typically, only a small percentage of items have a high volume of interactions, and this is referred to as the “head”. Most items are in the “long tail”, but they only make up a small percentage of interactions.
 
-![23.bmp](attachment:23.bmp)
+![23.bmp](images/23.bmp)
 
 
 Because there are many observations of popular items in the training data, it is not difficult for a recommender system to learn to accurately predict these items. In the movie dataset, the most popular movies are blockbusters and classics. These movies are already well-known to most users, and recommendations of them may not offer a personalized experience or help users discover new, relevant movies. Relevant recommendations are defined as recommendations of items that the user has rated positively in the test data. The metrics identified here provide methods for evaluating both the relevancy and usefulness of recommendations.
@@ -349,14 +349,14 @@ MAP@K and MAR@K:
 
 A recommender system typically produces an ordered list of recommendations for each user in the test set. MAP@K gives insight into how relevant the list of recommended items are, whereas MAR@K gives insight into how well the recommender is able to recall all the items the user has rated positively in the test set. I will not go into detail describing MAP@K and MAR@K because a great description can be found here:
 
-![24.bmp](attachment:24.bmp)
+![24.bmp](images/24.bmp)
 
 
 Coverage:
 
 Coverage is the percent of items in the training data the model is able to recommend on a test set. In this example, the popularity recommender has only 0.05% coverage, since it only ever recommends 10 items. The random recommender has nearly 100% coverage as expected. Surprisingly, the collaborative filter is only able to recommend 8.42% of the items it was trained on.
  
-![25.bmp](attachment:25.bmp)
+![25.bmp](images/25.bmp)
  
  
 Personalization:
@@ -364,7 +364,7 @@ Personalization:
 Personalization is a great way to assess if a model recommends many of the same items to different users. It is the dissimilarity (1- cosine similarity) between user’s lists of recommendations. An example will best illustrate how personalization is calculated.
 
 
-![26.bmp](attachment:26.bmp)
+![26.bmp](images/26.bmp)
 
 
 A high personalization score indicates user’s recommendations are different, meaning the model is offering a personalized experience to each user.
@@ -374,7 +374,7 @@ Intra-list Similarity:
 Intra-list similarity is the average cosine similarity of all items in a list of recommendations. This calculation uses features of the recommended items (such as movie genre) to calculate the similarity. This calculation is also best illustrated with an example.
  
  
- ![27.bmp](attachment:27.bmp)
+ ![27.bmp](images/27.bmp)
  
  
  If a recommender system is recommending lists of very similar items to single users (for example, a user receives only recommendations of romance movies), then the intra-list similarity will be high.
