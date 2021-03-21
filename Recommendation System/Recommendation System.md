@@ -392,5 +392,4 @@ Conclusion:
 A great recommender system makes both relevant and useful recommendations. Using a combination of multiple evaluation metrics, we can start to assess the performance of a model by more than just relevancy. Check out my python library if you would like use these metrics and plots to evaluate your own recommender systems.
 
 Thanks For Reading!
-
 @Bindu G
