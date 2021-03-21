@@ -32,7 +32,7 @@ The first approach under collaborative filtering is item to item approach where 
 
 Another approach is the classification filtering. It is a learning method that is used to determine which class the product will lie after classifying its behavior attributes more collaboratively. In a broad sense, collaborative filtering is divided into memory-based (calculating neighborhood) and model-based (Using different data mining techniques: Bayesian network, clustering, semantic analysis).
 
-![14.bmp](attachment:14.bmp)
+![14.bmp](images/14.bmp)
 
 # HYBRID MODEL
 
