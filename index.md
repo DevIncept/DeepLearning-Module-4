@@ -12,4 +12,4 @@
 
     -  [Part 2(a):  Recommendation System](Recommendation-System/Recommendation-System.md)
       
-11. [Assignment](assignment.md)
+3. **Project :** To be submitted as directed on slack
